@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Index — Yuros.org</title>
+    <meta name="description" content="Jelajahi seluruh katalog workshop intensif Yuros.org. Temukan workshop terpopuler di bidang Engineering, Teknologi, Security, Programming, Academic, dan Design.">
+    <link rel="stylesheet" href="styles/workshop-index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Yuros<span class="logo-dot">.org</span></span>
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#news"><i class="fa-solid fa-newspaper"></i> Berita</a></li>
+                    <li><a href="index.html#courses"><i class="fa-solid fa-graduation-cap"></i> Course</a></li>
+                    <li><a href="index.html#gallery"><i class="fa-solid fa-images"></i> Galeri</a></li>
+                    <li><a href="index.html#library"><i class="fa-solid fa-book"></i> Perpustakaan</a></li>
+                    <li><a href="workshop-index.html" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Workshop</a></li>
+                    <li><a href="index.html#research"><i class="fa-solid fa-flask"></i> Riset</a></li>
+                    <li><a href="index.html#apps"><i class="fa-solid fa-grid-2"></i> Aplikasi</a></li>
+                    <li><a href="index.html#os"><i class="fa-solid fa-server"></i> OS</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="page-hero-content">
+            <div class="page-breadcrumb">
+                <a href="index.html">Beranda</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Workshop</span>
+            </div>
+            <div class="page-hero-tag"><i class="fa-solid fa-screwdriver-wrench"></i> Kegiatan</div>
+            <h1>Indeks <span class="gradient-text">Workshop</span></h1>
+            <p>Temukan workshop intensif terbaik dari para expert di berbagai bidang teknologi. Online, Hybrid, dan Offline — sesuai kebutuhanmu.</p>
+            <div class="page-hero-stats">
+                <div class="hero-stat"><span class="hero-stat-num" id="stat-total">48</span><span class="hero-stat-label">Total Workshop</span></div>
+                <div class="hero-stat-div"></div>
+                <div class="hero-stat"><span class="hero-stat-num">6</span><span class="hero-stat-label">Kategori</span></div>
+                <div class="hero-stat-div"></div>
+                <div class="hero-stat"><span class="hero-stat-num">2.4K</span><span class="hero-stat-label">Peserta Aktif</span></div>
+                <div class="hero-stat-div"></div>
+                <div class="hero-stat"><span class="hero-stat-num">12</span><span class="hero-stat-label">Expert Instruktur</span></div>
+            </div>
+        </div>
+        <div class="page-hero-art">
+            <div class="art-circle c1"></div>
+            <div class="art-circle c2"></div>
+            <div class="art-circle c3"></div>
+            <i class="fa-solid fa-screwdriver-wrench art-icon"></i>
+        </div>
+    </section>
+
+
+
+    <!-- CONTROLS -->
+    <div class="controls-bar" id="controls-bar">
+        <div class="controls-inner">
+            <div class="search-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="global-search" placeholder="Cari workshop, topik, instruktur...">
+                <button class="search-clear" id="search-clear"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="filter-group">
+                <button class="mode-btn active" data-mode="all" id="filter-all">Semua</button>
+                <button class="mode-btn" data-mode="online"><i class="fa-solid fa-wifi"></i> Online</button>
+                <button class="mode-btn" data-mode="hybrid"><i class="fa-solid fa-code-branch"></i> Hybrid</button>
+                <button class="mode-btn" data-mode="offline"><i class="fa-solid fa-location-dot"></i> Offline</button>
+            </div>
+            <div class="sort-wrap">
+                <i class="fa-solid fa-arrow-up-wide-short"></i>
+                <select id="sort-select">
+                    <option value="popular">Terpopuler</option>
+                    <option value="date">Terdekat</option>
+                    <option value="rating">Rating Tertinggi</option>
+                    <option value="slots">Slot Tersedia</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORY NAV (sticky sidebar) -->
+    <div class="ws-layout">
+        <aside class="cat-sidebar" id="cat-sidebar">
+            <div class="cat-sidebar-inner">
+                <p class="cat-sidebar-title">Kategori</p>
+                <ul id="cat-nav-list">
+                    <li><a href="#cat-engineering" class="cat-nav-link active" data-cat="engineering">
+                        <i class="fa-solid fa-screwdriver-wrench"></i> Engineering
+                        <span class="cat-count" id="count-engineering">8</span>
+                    </a></li>
+                    <li><a href="#cat-teknologi" class="cat-nav-link" data-cat="teknologi">
+                        <i class="fa-solid fa-microchip"></i> Teknologi
+                        <span class="cat-count" id="count-teknologi">8</span>
+                    </a></li>
+                    <li><a href="#cat-security" class="cat-nav-link" data-cat="security">
+                        <i class="fa-solid fa-shield-halved"></i> Security
+                        <span class="cat-count" id="count-security">8</span>
+                    </a></li>
+                    <li><a href="#cat-programming" class="cat-nav-link" data-cat="programming">
+                        <i class="fa-solid fa-code"></i> Programming
+                        <span class="cat-count" id="count-programming">8</span>
+                    </a></li>
+                    <li><a href="#cat-academic" class="cat-nav-link" data-cat="academic">
+                        <i class="fa-solid fa-graduation-cap"></i> Academic
+                        <span class="cat-count" id="count-academic">8</span>
+                    </a></li>
+                    <li><a href="#cat-design" class="cat-nav-link" data-cat="design">
+                        <i class="fa-solid fa-palette"></i> Design
+                        <span class="cat-count" id="count-design">8</span>
+                    </a></li>
+                </ul>
+                <div class="cat-sidebar-cta">
+                    <p>Ingin jadi instruktur?</p>
+                    <a href="#" class="sidebar-cta-btn"><i class="fa-solid fa-chalkboard-user"></i> Ajukan Workshop</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="ws-main" id="ws-main">
+
+            <!-- EMPTY STATE -->
+            <div class="empty-state" id="empty-state" style="display:none">
+                <i class="fa-solid fa-magnifying-glass-minus"></i>
+                <h3>Workshop tidak ditemukan</h3>
+                <p>Coba ubah kata kunci atau filter pencarian</p>
+                <button class="reset-btn" id="reset-btn">Reset Pencarian</button>
+            </div>
+
+            <!-- CATEGORIES RENDERED BY JS -->
+            <div id="categories-container"></div>
+
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fa-brands fa-linux"></i>
+                        <span>Yuros<span class="logo-dot">.org</span></span>
+                    </div>
+                    <p>Platform komunitas open source Indonesia untuk belajar, berbagi, dan berinovasi bersama.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h5>Platform</h5>
+                    <ul>
+                        <li><a href="index.html#news">Berita</a></li>
+                        <li><a href="index.html#courses">Course</a></li>
+                        <li><a href="index.html#gallery">Galeri</a></li>
+                        <li><a href="index.html#library">Perpustakaan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Komunitas</h5>
+                    <ul>
+                        <li><a href="workshop-index.html">Workshop</a></li>
+                        <li><a href="index.html#research">Riset</a></li>
+                        <li><a href="index.html#apps">Aplikasi</a></li>
+                        <li><a href="index.html#os">Yuros OS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Tentang</h5>
+                    <ul>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Yuros.org — Open Source Community Indonesia. Licensed under <a href="#">GPL-3.0</a>.</p>
+                <p>Made with <i class="fa-solid fa-heart" style="color:#e74c3c"></i> by Yuros Community</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/workshop-data.js"></script>
+    <script src="scripts/workshop-index.js"></script>
+</body>
+</html>

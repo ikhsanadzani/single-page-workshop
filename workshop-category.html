@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Kategori Workshop — Yuros.org</title>
+    <meta name="description" id="page-desc" content="Detail dan paket registrasi workshop Yuros.org">
+    <link rel="stylesheet" href="styles/workshop-category.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Yuros<span class="logo-dot">.org</span></span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html#news"><i class="fa-solid fa-newspaper"></i> Berita</a></li>
+                    <li><a href="index.html#courses"><i class="fa-solid fa-graduation-cap"></i> Course</a></li>
+                    <li><a href="index.html#gallery"><i class="fa-solid fa-images"></i> Galeri</a></li>
+                    <li><a href="index.html#library"><i class="fa-solid fa-book"></i> Perpustakaan</a></li>
+                    <li><a href="workshop-index.html" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Workshop</a></li>
+                    <li><a href="index.html#research"><i class="fa-solid fa-flask"></i> Riset</a></li>
+                    <li><a href="index.html#apps"><i class="fa-solid fa-grid-2"></i> Aplikasi</a></li>
+                    <li><a href="index.html#os"><i class="fa-solid fa-server"></i> OS</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- CATEGORY HERO -->
+    <section class="cat-hero" id="cat-hero">
+        <div class="cat-hero-bg" id="cat-hero-bg"></div>
+        <div class="cat-hero-inner">
+            <div class="cat-hero-content">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">Beranda</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="workshop-index.html">Workshop</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span id="bc-category">Kategori</span>
+                </nav>
+
+                <!-- Category tag -->
+                <div class="cat-tag" id="cat-tag">
+                    <i class="fa-solid fa-screwdriver-wrench" id="cat-tag-icon"></i>
+                    <span id="cat-tag-label">Workshop</span>
+                </div>
+
+                <!-- Title & desc -->
+                <h1 id="cat-title">Memuat...</h1>
+                <p class="cat-desc" id="cat-desc"></p>
+
+                <!-- Highlights -->
+                <div class="cat-highlights" id="cat-highlights"></div>
+
+                <!-- Actions -->
+                <div class="cat-actions">
+                    <a href="#registration" class="btn-primary">
+                        <i class="fa-solid fa-tags"></i> Lihat Paket
+                    </a>
+                    <a href="#registration" class="btn-outline" id="btn-consult">
+                        <i class="fa-solid fa-headset"></i> Konsultasi Gratis
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="cat-stats" id="cat-stats">
+                <div class="stat-block">
+                    <span class="stat-num" id="stat-ws">0</span>
+                    <span class="stat-lbl">Workshop</span>
+                </div>
+                <div class="stat-div"></div>
+                <div class="stat-block">
+                    <span class="stat-num" id="stat-instr">0</span>
+                    <span class="stat-lbl">Instruktur</span>
+                </div>
+                <div class="stat-div"></div>
+                <div class="stat-block">
+                    <span class="stat-num" id="stat-alumni">0</span>
+                    <span class="stat-lbl">Alumni</span>
+                </div>
+                <div class="stat-div"></div>
+                <div class="stat-block">
+                    <span class="stat-num" id="stat-rating">4.8</span>
+                    <span class="stat-lbl">Rating</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="cat-main">
+
+
+        <!-- ── SECTION: SELECTED WORKSHOP DETAIL ── -->
+        <section class="section" id="schedule-section">
+            <div class="section-inner">
+                <div class="selected-detail" id="selected-detail" style="display:none; background: transparent; border: none; padding: 0; box-shadow: none;">
+                    <div class="sd-header" style="background: transparent; border: none; padding: 0 0 20px 0;">
+                        <h2 class="sd-title" id="sd-title" style="margin: 0;">—</h2>
+                        <div class="sd-meta" style="margin: 10px 0 0 0; padding: 0; border: none;">
+                            <span id="sd-date"><i class="fa-regular fa-calendar"></i> <span>—</span></span>
+                            <span id="sd-time"><i class="fa-regular fa-clock"></i> <span>—</span></span>
+                            <span id="sd-instructor"><i class="fa-solid fa-chalkboard-user"></i> <span>—</span></span>
+                        </div>
+                    </div>
+
+                    <div class="sd-schedule-picker" id="sd-schedule-picker">
+                        <h4><i class="fa-regular fa-calendar-days"></i> Pilih Hari Pelaksanaan</h4>
+                        <p class="sd-schedule-desc">Pilih hari untuk melihat ketersediaan jadwal pada hari tersebut.</p>
+                        
+                        <div class="sd-pills sd-day-pills" id="sd-day-pills">
+                            <button class="sd-pill-btn" data-day="Senin">Senin</button>
+                            <button class="sd-pill-btn" data-day="Selasa">Selasa</button>
+                            <button class="sd-pill-btn" data-day="Rabu">Rabu</button>
+                            <button class="sd-pill-btn" data-day="Kamis">Kamis</button>
+                            <button class="sd-pill-btn" data-day="Jumat">Jumat</button>
+                            <button class="sd-pill-btn" data-day="Sabtu">Sabtu</button>
+                            <button class="sd-pill-btn" data-day="Minggu">Minggu</button>
+                        </div>
+
+                        <!-- Status Area: Shown after user clicks a day -->
+                        <div class="sd-schedule-status" id="sd-schedule-status" style="display: none;">
+                            <!-- Content injected via JS based on availability -->
+                        </div>
+                    </div>
+
+                    <div class="sd-cert-premium">
+                        <div class="sd-cert-bg-shape"></div>
+                        <div class="sd-cert-icon-glow">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div class="sd-cert-details">
+                            <h4 class="sd-cert-title">Verified Certificate of Completion</h4>
+                            <p class="sd-cert-desc" id="sd-cert-text">Selesaikan workshop ini dan dapatkan sertifikat resmi dari Yuros yang dapat ditambahkan langsung ke LinkedIn Anda.</p>
+                        </div>
+                        <div class="sd-cert-action">
+                            <a href="#" class="sd-cert-download-btn" id="sd-cert-btn">
+                                <span>Preview Sertifikat</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SECTION: REGISTRATION ── -->
+        <section class="section reg-section" id="registration">
+            <div class="section-inner">
+                <div class="section-head centered">
+                    <h2 class="section-title">Pilih Paket Registrasi</h2>
+                    <p class="section-sub">Sesuaikan tipe dan tier paket dengan kebutuhan Anda</p>
+                </div>
+
+                <!-- 4 type tabs -->
+                <div class="type-tabs" id="type-tabs" role="tablist"></div>
+
+                <!-- Tab body: desc + package cards -->
+                <div class="type-body" id="type-body"></div>
+
+            </div>
+        </section>
+
+        <!-- ── SECTION: REGISTRATION FORM ── -->
+        <section class="section form-section" id="form-section" style="display:none">
+            <div class="section-inner">
+                <div class="form-wrap">
+                    <!-- Selected summary -->
+                    <div class="form-summary" id="form-summary"></div>
+
+                    <!-- Form -->
+                    <form class="reg-form" id="reg-form" novalidate>
+                        <h3 class="form-title">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            Data Pendaftaran
+                        </h3>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="f-name">Nama Lengkap <span class="req">*</span></label>
+                                <input type="text" id="f-name" name="name" placeholder="Masukkan nama lengkap" required autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="f-org">Institusi / Perusahaan <span class="req">*</span></label>
+                                <input type="text" id="f-org" name="org" placeholder="Nama institusi atau perusahaan" required autocomplete="organization">
+                            </div>
+                            <div class="form-group">
+                                <label for="f-email">Email <span class="req">*</span></label>
+                                <input type="email" id="f-email" name="email" placeholder="email@contoh.com" required autocomplete="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="f-wa">WhatsApp <span class="req">*</span></label>
+                                <div class="input-prefix-wrap">
+                                    <span class="input-prefix">+62</span>
+                                    <input type="tel" id="f-wa" name="wa" placeholder="8xx-xxxx-xxxx" required autocomplete="tel">
+                                </div>
+                            </div>
+                            <!-- Conditional: shown for group types -->
+                            <div class="form-group" id="fg-participants" style="display:none">
+                                <label for="f-participants">Estimasi Jumlah Peserta <span class="req">*</span></label>
+                                <input type="number" id="f-participants" name="participants" placeholder="Contoh: 15" min="1" max="200">
+                            </div>
+                            <!-- Conditional: shown for inplace types -->
+                            <div class="form-group" id="fg-location" style="display:none">
+                                <label for="f-location">Kota / Lokasi Pelaksanaan <span class="req">*</span></label>
+                                <input type="text" id="f-location" name="location" placeholder="Contoh: Jakarta Selatan">
+                            </div>
+                            <div class="form-group">
+                                <label for="f-date">Tanggal Diinginkan</label>
+                                <input type="date" id="f-date" name="date" autocomplete="off" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="f-time">Waktu Diinginkan</label>
+                                <input type="text" id="f-time" name="time" autocomplete="off" readonly placeholder="Pilih jadwal di detail workshop">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="f-notes">Catatan Tambahan</label>
+                                <textarea id="f-notes" name="notes" placeholder="Informasi tambahan, kebutuhan khusus, atau pertanyaan..." rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-footer">
+                            <button type="submit" class="form-submit-btn" id="form-submit-btn">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Kirim Permintaan
+                            </button>
+                            <p class="form-note">
+                                <i class="fa-solid fa-clock"></i>
+                                Tim kami akan menghubungi Anda dalam <strong>1×24 jam kerja</strong>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SECTION: WORKSHOP LIST ── -->
+        <section class="section ws-list-section" id="workshops">
+            <div class="section-inner">
+                <div class="section-head">
+                    <div>
+                        <h2 class="section-title">Workshop Lainnya Tersedia</h2>
+                        <p class="section-sub" id="ws-list-sub">Pilih workshop lain yang ingin Anda ikuti</p>
+                    </div>
+                    <div class="ws-list-filters">
+                        <button class="filter-pill active" data-status="all">Semua</button>
+                        <button class="filter-pill" data-status="online"><i class="fa-solid fa-wifi"></i> Online</button>
+                        <button class="filter-pill" data-status="hybrid"><i class="fa-solid fa-code-branch"></i> Hybrid</button>
+                        <button class="filter-pill" data-status="offline"><i class="fa-solid fa-location-dot"></i> Offline</button>
+                    </div>
+                </div>
+                <div class="ws-cards-grid" id="ws-cards-grid"></div>
+            </div>
+        </section>
+
+        <!-- ── SUCCESS STATE ── -->
+        <div class="success-state" id="success-state" style="display:none">
+            <div class="success-inner">
+                <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <h3>Permintaan Terkirim!</h3>
+                <p>Terima kasih! Tim Yuros akan menghubungi Anda melalui email dan WhatsApp dalam <strong>1×24 jam kerja</strong>.</p>
+                <div class="success-actions">
+                    <a href="workshop-index.html" class="btn-primary">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali ke Workshop
+                    </a>
+                    <button class="btn-outline" id="reg-another-btn">
+                        <i class="fa-solid fa-plus"></i> Daftar Workshop Lain
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="foot-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fa-brands fa-linux"></i>
+                        <span>Yuros<span class="logo-dot">.org</span></span>
+                    </div>
+                    <p>Platform komunitas open source Indonesia untuk belajar, berbagi, dan berinovasi bersama.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h5>Platform</h5>
+                    <ul>
+                        <li><a href="index.html#news">Berita</a></li>
+                        <li><a href="index.html#courses">Course</a></li>
+                        <li><a href="index.html#library">Perpustakaan</a></li>
+                        <li><a href="index.html#research">Riset</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Workshop</h5>
+                    <ul>
+                        <li><a href="workshop-index.html">Semua Kategori</a></li>
+                        <li><a href="workshop-category.html?cat=engineering">Engineering</a></li>
+                        <li><a href="workshop-category.html?cat=security">Security</a></li>
+                        <li><a href="workshop-category.html?cat=programming">Programming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Kontak</h5>
+                    <ul>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Yuros.org — Open Source Community Indonesia. Licensed under <a href="#">GPL-3.0</a>.</p>
+                <p>Made with <i class="fa-solid fa-heart" style="color:#e74c3c"></i> by Yuros Community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts: data first, then page logic -->
+    <script src="scripts/workshop-data.js"></script>
+    <script src="scripts/workshop-category.js"></script>
+</body>
+</html>
