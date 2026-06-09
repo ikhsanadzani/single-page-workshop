@@ -13,7 +13,9 @@ const state = {
     category:          null,   // current CATEGORIES item
     workshops:         [],     // workshops in this category
     selectedWorkshop:  null,   // currently selected workshop
-    activeTypeId:      'group-outplace',  // default: most popular
+    selectedTrainer:   null,   // selected trainer ID
+    activeScope:       'private', // private or group
+    activeMode:        'online',  // online or regular
     activeTierId:      null,   // null until user clicks "Pilih Paket"
     statusFilter:      'all',
     selectedDate:      null,
@@ -44,7 +46,6 @@ function init() {
     renderHero();
     renderWorkshopGrid();
     renderSelectedDetail();
-    renderTypeTabs();
     renderTypeBody();
     initEventListeners();
     initNavbar();
@@ -194,10 +195,16 @@ function renderSelectedDetail() {
 
     if (!ws) { detail.style.display = 'none'; return; }
 
+    // Set initial trainer based on workshop instructor if matches
+    const matchedTrainer = TRAINERS.find(t => t.name === ws.instructor);
+    state.selectedTrainer = matchedTrainer ? matchedTrainer.id : TRAINERS[0].id;
+
     document.getElementById('sd-title').textContent = ws.title;
     document.querySelector('#sd-date span').textContent  = `${ws.day} ${ws.month} 2026`;
     document.querySelector('#sd-time span').textContent  = ws.time;
-    document.querySelector('#sd-instructor span').textContent = ws.instructor;
+    
+    updateInstructorDisplay();
+    renderTrainerPicker();
     // Image & Certificate Link
     const certBtn = document.getElementById('sd-cert-btn');
     if (certBtn) {
@@ -213,6 +220,44 @@ function renderSelectedDetail() {
     renderSchedulePicker(ws);
 
     detail.style.display = 'block';
+}
+
+function renderTrainerPicker() {
+    const grid = document.getElementById('trainer-cards-grid');
+    if (!grid) return;
+
+    grid.innerHTML = TRAINERS.map(t => `
+        <div class="trainer-card ${state.selectedTrainer === t.id ? 'active' : ''}" data-tid="${t.id}" role="button" tabindex="0" aria-label="Pilih trainer: ${t.name}">
+            <div class="trainer-selected-icon"><i class="fa-solid fa-check"></i></div>
+            <img src="${t.photo}" alt="${t.name}" class="trainer-photo">
+            <h5 class="trainer-name">${t.name}</h5>
+            <div class="trainer-role">${t.role}</div>
+            <p class="trainer-exp">${t.experience}</p>
+        </div>
+    `).join('');
+
+    // Attach events
+    grid.querySelectorAll('.trainer-card').forEach(card => {
+        card.onclick = () => {
+            state.selectedTrainer = card.dataset.tid;
+            renderTrainerPicker(); // Re-render to update active state
+            updateInstructorDisplay();
+        };
+        // Keyboard support
+        card.onkeydown = (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.onclick();
+            }
+        };
+    });
+}
+
+function updateInstructorDisplay() {
+    const trainer = TRAINERS.find(t => t.id === state.selectedTrainer);
+    if (trainer) {
+        document.querySelector('#sd-instructor span').textContent = trainer.name;
+    }
 }
 
 function renderSchedulePicker(ws) {
@@ -305,31 +350,11 @@ function updateScheduleUI(ws) {
     }
 }
 
-// ============================================================
-// TYPE TABS
-// ============================================================
-function renderTypeTabs() {
-    const tabsEl = document.getElementById('type-tabs');
-    tabsEl.innerHTML = REGISTRATION_TYPES.map(type => `
-        <button class="type-tab ${type.id === state.activeTypeId ? 'active' : ''}"
-                data-type="${type.id}" role="tab"
-                aria-selected="${type.id === state.activeTypeId}"
-                aria-label="Pilih tipe: ${type.label}">
-            <div class="tab-icon"><i class="fa-solid ${type.icon}"></i></div>
-            <span class="tab-label">${type.label}</span>
-            <span class="tab-tagline">${type.tagline}</span>
-            ${type.badge ? `<span class="tab-badge">${type.badge}</span>` : ''}
-        </button>
-    `).join('');
-}
-
-// ============================================================
-// TYPE BODY (description + package cards)
-// ============================================================
 function renderTypeBody() {
+    const activeTypeId = `${state.activeScope}-${state.activeMode}`;
     const bodyEl = document.getElementById('type-body');
-    const type   = REGISTRATION_TYPES.find(t => t.id === state.activeTypeId);
-    const tiers  = PACKAGE_TIERS[state.activeTypeId];
+    const type   = REGISTRATION_TYPES.find(t => t.id === activeTypeId);
+    const tiers  = PACKAGE_TIERS[activeTypeId];
 
     const highlightsHtml = type.highlights.map(h =>
         `<span class="type-hl"><i class="fa-solid fa-check"></i>${h}</span>`
@@ -387,9 +412,10 @@ function renderPackageCard(tier) {
 // PACKAGE SELECTION → show form
 // ============================================================
 function selectPackage(tierName) {
+    const activeTypeId = `${state.activeScope}-${state.activeMode}`;
     state.activeTierId = tierName;
-    const type = REGISTRATION_TYPES.find(t => t.id === state.activeTypeId);
-    const tier = PACKAGE_TIERS[state.activeTypeId].find(t => t.name === tierName);
+    const type = REGISTRATION_TYPES.find(t => t.id === activeTypeId);
+    const tier = PACKAGE_TIERS[activeTypeId].find(t => t.name === tierName);
     const ws   = state.selectedWorkshop;
 
     // Populate form summary
@@ -411,16 +437,34 @@ function selectPackage(tierName) {
         </div>`;
 
     // Show/hide conditional fields
-    const isGroup   = state.activeTypeId.startsWith('group');
-    const isInplace = state.activeTypeId.endsWith('inplace');
+    const isGroup   = state.activeScope === 'group';
+    const isInplace = state.activeMode === 'onsite';
     document.getElementById('fg-participants').style.display = isGroup   ? 'flex' : 'none';
     document.getElementById('fg-location').style.display     = isInplace ? 'flex' : 'none';
 
     // Show form section
     const formSection = document.getElementById('form-section');
     formSection.style.display = 'block';
+    
+    // Scroll to schedule picker instead of form directly
     setTimeout(() => {
-        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const schedulePicker = document.getElementById('sd-schedule-picker');
+        if (schedulePicker) {
+            schedulePicker.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Brief highlight effect to draw attention
+            const origBoxShadow = schedulePicker.style.boxShadow;
+            const origTransition = schedulePicker.style.transition;
+            schedulePicker.style.transition = 'box-shadow 0.3s ease';
+            schedulePicker.style.boxShadow = '0 0 0 2px var(--cat-color)';
+            
+            setTimeout(() => {
+                schedulePicker.style.boxShadow = origBoxShadow;
+                schedulePicker.style.transition = origTransition;
+            }, 1000);
+        } else {
+            formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }, 80);
 }
 
@@ -480,11 +524,41 @@ function initEventListeners() {
         }
     });
 
-    // Type tab click (delegated)
-    document.getElementById('type-tabs').addEventListener('click', e => {
-        const tab = e.target.closest('.type-tab');
-        if (!tab) return;
-        switchType(tab.dataset.type);
+    // Scope & Mode pickers (delegated or direct)
+    document.querySelectorAll('#scope-pills .type-card').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('#scope-pills .type-card').forEach(b => b.classList.remove('active'));
+            const target = e.currentTarget;
+            target.classList.add('active');
+            state.activeScope = target.dataset.scope;
+            state.activeTierId = null;
+            document.getElementById('form-section').style.display = 'none';
+            renderTypeBody();
+        });
+        btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                btn.click();
+            }
+        });
+    });
+
+    document.querySelectorAll('#mode-pills .type-card').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('#mode-pills .type-card').forEach(b => b.classList.remove('active'));
+            const target = e.currentTarget;
+            target.classList.add('active');
+            state.activeMode = target.dataset.mode;
+            state.activeTierId = null;
+            document.getElementById('form-section').style.display = 'none';
+            renderTypeBody();
+        });
+        btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                btn.click();
+            }
+        });
     });
 
     // Status filter pills
@@ -555,25 +629,7 @@ function selectWorkshop(wsId) {
     }, 160);
 }
 
-// ============================================================
-// SWITCH REGISTRATION TYPE
-// ============================================================
-function switchType(typeId) {
-    state.activeTypeId = typeId;
-    state.activeTierId = null;
-
-    // Update active tab visual
-    document.querySelectorAll('.type-tab').forEach(tab => {
-        const isActive = tab.dataset.type === typeId;
-        tab.classList.toggle('active', isActive);
-        tab.setAttribute('aria-selected', isActive);
-    });
-
-    renderTypeBody();
-
-    // Hide form if type changed
-    document.getElementById('form-section').style.display = 'none';
-}
+// (switchType function removed since UI changed)
 
 // ============================================================
 // NAVBAR SCROLL

@@ -603,39 +603,57 @@ const WORKSHOPS = [
 // ============================================================
 const REGISTRATION_TYPES = [
     {
-        id: 'group-inplace',
-        label: 'Group Inplace',
-        icon: 'fa-building-user',
-        tagline: 'Kami hadir di lokasi Anda',
-        desc: 'Instruktur Yuros datang langsung ke kantor atau fasilitas klien. Ideal untuk perusahaan atau institusi yang ingin melatih tim secara massal tanpa perlu mobilisasi peserta.',
-        highlights: ['Tidak perlu mobilisasi tim', 'Suasana & tools kerja familiar', 'Jadwal fleksibel sesuai klien'],
+        id: 'private-online',
+        label: 'Private Online',
+        icon: 'fa-video',
+        tagline: 'Sesi 1-on-1 via Video Conference',
+        desc: 'Sesi intensif personal bersama instruktur secara online. Kurikulum dirancang 100% sesuai kebutuhan.',
+        highlights: ['Kurikulum custom', 'Perhatian penuh', 'Fleksibel'],
         badge: null
     },
     {
-        id: 'group-outplace',
-        label: 'Group Outplace',
+        id: 'private-regular',
+        label: 'Private Regular',
+        icon: 'fa-user-tie',
+        tagline: 'Sesi 1-on-1 Tatap Muka',
+        desc: 'Sesi intensif personal tatap muka dengan instruktur di lokasi. Fokus penuh dengan fasilitas langsung.',
+        highlights: ['Tatap muka', 'Lab & tools fisik', 'Interaksi intensif'],
+        badge: null
+    },
+    {
+        id: 'group-online',
+        label: 'Group Online',
+        icon: 'fa-users',
+        tagline: 'Pelatihan Tim Jarak Jauh',
+        desc: 'Workshop diselenggarakan online untuk tim Anda. Ideal untuk perusahaan dengan tim remote.',
+        highlights: ['Akses dari mana saja', 'Interaktif via platform', 'Rekaman sesi berkualitas'],
+        badge: null
+    },
+    {
+        id: 'group-regular',
+        label: 'Group Regular',
         icon: 'fa-people-group',
-        tagline: 'Di Yuros Learning Center',
-        desc: 'Workshop diselenggarakan di fasilitas Yuros yang dilengkapi lab komputer, proyektor 4K, dan koneksi internet dedicated. Peserta dari berbagai institusi dapat saling networking.',
-        highlights: ['Fasilitas lab profesional', 'Networking antar peserta', 'Catering & coffee break'],
+        tagline: 'Pelatihan Tim Tatap Muka',
+        desc: 'Workshop diselenggarakan secara offline. Cocok untuk membangun kolaborasi dan networking tim secara langsung.',
+        highlights: ['Fasilitas lab lengkap', 'Networking tim', 'Praktik langsung'],
         badge: 'Terpopuler'
     },
     {
-        id: 'private-inplace',
-        label: 'Private Inplace',
-        icon: 'fa-user-tie',
-        tagline: 'Sesi 1-on-1 di lokasi Anda',
-        desc: 'Sesi intensif personal bersama instruktur berpengalaman yang datang ke lokasi Anda. Kurikulum dirancang 100% sesuai kebutuhan dan level individu.',
-        highlights: ['Kurikulum custom 100%', 'Perhatian penuh instruktur', 'Instruktur datang ke Anda'],
+        id: 'group-onsite',
+        label: 'Group Onsite',
+        icon: 'fa-building-user',
+        tagline: 'Pelatihan Tim di Kantor Anda',
+        desc: 'Instruktur Yuros datang ke kantor Anda. Ideal untuk melatih tim secara massal tanpa perlu keluar kantor.',
+        highlights: ['Suasana kerja familiar', 'Tanpa biaya transportasi tim', 'Jadwal sesuai klien'],
         badge: null
     },
     {
-        id: 'private-outplace',
-        label: 'Private Outplace',
-        icon: 'fa-person-chalkboard',
-        tagline: 'Sesi 1-on-1 di fasilitas Yuros',
-        desc: 'Sesi intensif personal di Yuros Learning Center. Nikmati lingkungan belajar profesional dengan akses penuh ke lab, referensi, dan infrastruktur kami.',
-        highlights: ['Akses lab & perpustakaan Yuros', 'Lingkungan fokus belajar', 'Resource digital lengkap'],
+        id: 'private-onsite',
+        label: 'Private Onsite',
+        icon: 'fa-car-side',
+        tagline: 'Instruktur Datang ke Lokasi Anda',
+        desc: 'Sesi intensif 1-on-1 di mana instruktur Yuros datang langsung ke rumah atau kantor Anda.',
+        highlights: ['Tatap muka di lokasi Anda', 'Waktu fleksibel', 'Tanpa perlu mobilisasi'],
         badge: null
     }
 ];
@@ -644,7 +662,7 @@ const REGISTRATION_TYPES = [
 // 4. PACKAGE TIERS (3 tier × 4 tipe)
 // ============================================================
 const PACKAGE_TIERS = {
-    'group-inplace': [
+    'group-regular': [
         {
             name: 'Basic',
             price: 3500000,
@@ -697,7 +715,7 @@ const PACKAGE_TIERS = {
             ]
         }
     ],
-    'group-outplace': [
+    'group-online': [
         {
             name: 'Basic',
             price: 750000,
@@ -747,7 +765,7 @@ const PACKAGE_TIERS = {
             ]
         }
     ],
-    'private-inplace': [
+    'private-regular': [
         {
             name: 'Basic',
             price: 5000000,
@@ -796,7 +814,7 @@ const PACKAGE_TIERS = {
             ]
         }
     ],
-    'private-outplace': [
+    'private-online': [
         {
             name: 'Basic',
             price: 3000000,
@@ -845,8 +863,102 @@ const PACKAGE_TIERS = {
                 'Akses perpustakaan digital (1 tahun)'
             ]
         }
+            ]
+        }
+    
+    'group-onsite' [
+        {
+            name: 'Basic',
+            price: 3500000,
+            priceUnit: '/ sesi',
+            priceNote: 'maks. 20 peserta',
+            duration: '1 Hari (8 jam)',
+            isPopular: false,
+            features: [
+                'Instruktur bersertifikat Yuros',
+                'Instruktur datang ke lokasi',
+                'Materi workshop digital (PDF + slide)',
+                'Sesi Q&A interaktif',
+                'Laporan evaluasi peserta'
+            ]
+        },
+        {
+            name: 'Standard',
+            price: 5500000,
+            priceUnit: '/ sesi',
+            priceNote: 'maks. 30 peserta',
+            duration: '2 Hari (16 jam)',
+            isPopular: true,
+            features: [
+                'Semua fitur Basic',
+                'Materi PDF eksklusif (cetak)',
+                'Support via WhatsApp (1 bulan)',
+                'Pre-training consultation (1 jam)',
+                'Assessment & sertifikat kelulusan'
+            ]
+        },
+        {
+            name: 'Premium',
+            price: 8500000,
+            priceUnit: '/ sesi',
+            priceNote: 'maks. 50 peserta',
+            duration: '3 Hari (24 jam)',
+            isPopular: false,
+            features: [
+                'Semua fitur Standard',
+                'Kurikulum custom penuh',
+                'Support via WhatsApp (3 bulan)',
+                'Sertifikat fisik + digital',
+                'Laporan performa detail per peserta'
+            ]
+        }
+    ],
+    'private-onsite' [
+        {
+            name: 'Basic',
+            price: 5000000,
+            priceUnit: '/ sesi',
+            priceNote: '1 peserta, 4 jam',
+            duration: '4 Jam',
+            isPopular: false,
+            features: [
+                'Instruktur datang ke lokasi Anda',
+                'Materi workshop digital',
+                'Sertifikat digital',
+                'Biaya transport instruktur included'
+            ]
+        },
+        {
+            name: 'Standard',
+            price: 8000000,
+            priceUnit: '/ sesi',
+            priceNote: '1 peserta, 1 hari',
+            duration: '1 Hari (8 jam)',
+            isPopular: true,
+            features: [
+                'Semua fitur Basic',
+                'Kurikulum semi-custom',
+                'Hands-on project pribadi',
+                'Support via WhatsApp (2 bulan)'
+            ]
+        },
+        {
+            name: 'Premium',
+            price: 12000000,
+            priceUnit: '/ sesi',
+            priceNote: '1 peserta, 2 hari',
+            duration: '2 Hari (16 jam)',
+            isPopular: false,
+            features: [
+                'Semua fitur Standard',
+                'Kurikulum custom penuh',
+                'Portfolio project nyata',
+                'Support via WhatsApp (3 bulan)',
+                'LinkedIn recommendation letter'
+            ]
+        }
     ]
-};
+
 
 // ============================================================
 // 5. HELPERS
@@ -866,3 +978,37 @@ function fillPct(cur, max) { return Math.round((cur / max) * 100); }
 function statusLabel(s) {
     return { online: 'Online', offline: 'Offline', hybrid: 'Hybrid' }[s] || s;
 }
+
+// ============================================================
+// 6. TRAINERS
+// ============================================================
+const TRAINERS = [
+    {
+        id: 't1',
+        name: 'Rizky Pratama',
+        photo: 'https://i.pravatar.cc/150?u=rizky',
+        role: 'Senior System Engineer',
+        experience: '10+ tahun merancang infrastruktur high-availability dan administrasi sistem Linux tingkat lanjut.'
+    },
+    {
+        id: 't2',
+        name: 'Siti Nurhaliza',
+        photo: 'https://i.pravatar.cc/150?u=siti',
+        role: 'Cloud Architect',
+        experience: 'Sertifikasi AWS & CKA, ahli dalam deployment Kubernetes dan implementasi DevOps modern.'
+    },
+    {
+        id: 't3',
+        name: 'Budi Santoso',
+        photo: 'https://i.pravatar.cc/150?u=budi',
+        role: 'Security Specialist',
+        experience: 'Pakar Keamanan Siber dengan 15+ sertifikasi internasional dan mantan konsultan enterprise global.'
+    },
+    {
+        id: 't4',
+        name: 'Dewi Rahayu',
+        photo: 'https://i.pravatar.cc/150?u=dewi',
+        role: 'Principal Designer',
+        experience: '8 tahun pengalaman mendesain produk digital multi-platform dan membangun design system di startup Unicorn.'
+    }
+];

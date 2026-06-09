@@ -462,6 +462,182 @@ body {
 }
 
 /* ============================================================
+   TRAINER PICKER SECTION
+   ============================================================ */
+.sd-trainer-picker {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+.sd-trainer-picker h4 {
+    font-size: 1.05rem; font-weight: 700; color: var(--text-primary);
+    margin-bottom: 6px; display: flex; align-items: center; gap: 8px;
+}
+.sd-trainer-picker h4 i { color: var(--cat-color); }
+.sd-trainer-desc {
+    font-size: 0.85rem; color: var(--text-sec); margin-bottom: 20px;
+}
+
+.trainer-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.trainer-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px 16px;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.trainer-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow-card);
+}
+
+.trainer-card.active {
+    border-color: var(--cat-color);
+    background: rgba(var(--cat-color-raw, 99, 102, 241), 0.08);
+    box-shadow: 0 0 0 1px var(--cat-color);
+}
+
+.trainer-selected-icon {
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 24px; height: 24px;
+    background: var(--cat-color);
+    color: #fff;
+    border-radius: 50%;
+    display: none; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+}
+.trainer-card.active .trainer-selected-icon {
+    display: flex;
+}
+
+.trainer-photo {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 2px solid var(--border);
+    transition: all var(--transition);
+}
+.trainer-card.active .trainer-photo {
+    border-color: var(--cat-color);
+}
+
+.trainer-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.trainer-role {
+    font-size: 0.75rem;
+    color: var(--cat-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.trainer-exp {
+    font-size: 0.8rem;
+    color: var(--text-sec);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ============================================================
+   TYPE CARDS (Scope & Mode)
+   ============================================================ */
+.type-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+.type-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+.type-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    background: var(--bg-elevated);
+}
+.type-card.active {
+    border-color: var(--cat-color);
+    background: rgba(var(--cat-color-raw, 99, 102, 241), 0.08);
+    box-shadow: 0 0 0 1px var(--cat-color);
+}
+.tc-icon {
+    font-size: 1.25rem;
+    color: var(--text-sec);
+    width: 44px; height: 44px;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--transition);
+}
+.type-card.active .tc-icon {
+    color: var(--cat-color);
+    background: rgba(var(--cat-color-raw, 99, 102, 241), 0.15);
+}
+.tc-content {
+    flex: 1;
+}
+.tc-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+.tc-desc {
+    font-size: 0.75rem;
+    color: var(--text-sec);
+    line-height: 1.4;
+}
+.tc-check {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--cat-color);
+    color: #fff;
+    display: none;
+    align-items: center; justify-content: center;
+    font-size: 0.65rem;
+}
+.type-card.active .tc-check {
+    display: flex;
+}
+
+/* ============================================================
    SELECTED WORKSHOP DETAIL
    ============================================================ */
 .selected-detail {

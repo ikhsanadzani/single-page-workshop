@@ -107,6 +107,78 @@
         <section class="section" id="schedule-section">
             <div class="section-inner">
                 <div class="selected-detail" id="selected-detail" style="display:none; background: transparent; border: none; padding: 0; box-shadow: none;">
+                    <div class="sd-trainer-picker" id="sd-trainer-picker">
+                        <h4><i class="fa-solid fa-chalkboard-user"></i> Pilih Trainer</h4>
+                        <p class="sd-trainer-desc">Pilih instruktur yang akan memandu sesi workshop Anda sesuai preferensi.</p>
+                        <div class="trainer-cards-grid" id="trainer-cards-grid">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- TWO STEP PACKAGE PICKER -->
+                    <div class="sd-registration-picker" id="registration" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; margin-bottom: 24px;">
+                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-layer-group" style="color: var(--cat-color);"></i> Pilih Tipe & Paket Registrasi
+                        </h4>
+                        
+                        <!-- Step 1: Scope -->
+                        <div style="margin-bottom: 20px;">
+                            <label style="display:block; font-size: 0.85rem; color: var(--text-sec); margin-bottom: 10px;">1. Pilih Tipe Sesi:</label>
+                            <div class="type-cards-grid" id="scope-pills">
+                                <div class="type-card active" data-scope="private" role="button" tabindex="0">
+                                    <div class="tc-icon"><i class="fa-solid fa-user-tie"></i></div>
+                                    <div class="tc-content">
+                                        <div class="tc-title">Private</div>
+                                        <div class="tc-desc">Sesi intensif personal 1-on-1</div>
+                                    </div>
+                                    <div class="tc-check"><i class="fa-solid fa-check"></i></div>
+                                </div>
+                                <div class="type-card" data-scope="group" role="button" tabindex="0">
+                                    <div class="tc-icon"><i class="fa-solid fa-people-group"></i></div>
+                                    <div class="tc-content">
+                                        <div class="tc-title">Group</div>
+                                        <div class="tc-desc">Pelatihan khusus untuk tim/institusi</div>
+                                    </div>
+                                    <div class="tc-check"><i class="fa-solid fa-check"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Mode -->
+                        <div style="margin-bottom: 24px;">
+                            <label style="display:block; font-size: 0.85rem; color: var(--text-sec); margin-bottom: 10px;">2. Pilih Metode Pelaksanaan:</label>
+                            <div class="type-cards-grid" id="mode-pills">
+                                <div class="type-card active" data-mode="online" role="button" tabindex="0">
+                                    <div class="tc-icon"><i class="fa-solid fa-video"></i></div>
+                                    <div class="tc-content">
+                                        <div class="tc-title">Online</div>
+                                        <div class="tc-desc">Via Video Conference (Zoom/Meet)</div>
+                                    </div>
+                                    <div class="tc-check"><i class="fa-solid fa-check"></i></div>
+                                </div>
+                                <div class="type-card" data-mode="regular" role="button" tabindex="0">
+                                    <div class="tc-icon"><i class="fa-solid fa-building"></i></div>
+                                    <div class="tc-content">
+                                        <div class="tc-title">Regular</div>
+                                        <div class="tc-desc">Sesi Tatap Muka di Lokasi</div>
+                                    </div>
+                                    <div class="tc-check"><i class="fa-solid fa-check"></i></div>
+                                </div>
+                                <div class="type-card" data-mode="onsite" role="button" tabindex="0">
+                                    <div class="tc-icon"><i class="fa-solid fa-car-side"></i></div>
+                                    <div class="tc-content">
+                                        <div class="tc-title">Onsite</div>
+                                        <div class="tc-desc">Instruktur ke Lokasi Anda</div>
+                                    </div>
+                                    <div class="tc-check"><i class="fa-solid fa-check"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Packages Container -->
+                        <div class="type-body" id="type-body" style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border);"></div>
+                    </div>
+
                     <div class="sd-header" style="background: transparent; border: none; padding: 0 0 20px 0;">
                         <h2 class="sd-title" id="sd-title" style="margin: 0;">—</h2>
                         <div class="sd-meta" style="margin: 10px 0 0 0; padding: 0; border: none;">
@@ -156,22 +228,7 @@
             </div>
         </section>
 
-        <!-- ── SECTION: REGISTRATION ── -->
-        <section class="section reg-section" id="registration">
-            <div class="section-inner">
-                <div class="section-head centered">
-                    <h2 class="section-title">Pilih Paket Registrasi</h2>
-                    <p class="section-sub">Sesuaikan tipe dan tier paket dengan kebutuhan Anda</p>
-                </div>
-
-                <!-- 4 type tabs -->
-                <div class="type-tabs" id="type-tabs" role="tablist"></div>
-
-                <!-- Tab body: desc + package cards -->
-                <div class="type-body" id="type-body"></div>
-
-            </div>
-        </section>
+        <!-- ── SECTION: REGISTRATION (Moved to Selected Detail) ── -->
 
         <!-- ── SECTION: REGISTRATION FORM ── -->
         <section class="section form-section" id="form-section" style="display:none">
