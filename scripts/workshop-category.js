@@ -47,6 +47,8 @@ function init() {
     renderWorkshopGrid();
     renderSelectedDetail();
     renderTypeBody();
+    renderTestimonials();
+    setupNavLinks();
     initEventListeners();
     initNavbar();
 }
@@ -629,7 +631,56 @@ function selectWorkshop(wsId) {
     }, 160);
 }
 
-// (switchType function removed since UI changed)
+// ============================================================
+// TESTIMONIALS
+// ============================================================
+function renderTestimonials() {
+    const carousel = document.getElementById('testi-carousel');
+    if (!carousel) return;
+
+    const catId = state.category.id;
+    const testimonials = TESTIMONIALS.filter(t => t.category === catId);
+
+    if (testimonials.length === 0) {
+        carousel.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 32px;">Belum ada testimoni untuk kategori ini.</p>';
+        return;
+    }
+
+    carousel.innerHTML = testimonials.map(t => {
+        const starsHtml = Array.from({ length: 5 }, (_, i) =>
+            `<i class="fa-solid fa-star${i < t.rating ? '' : ' style="opacity:0.3"'}"></i>`
+        ).join('');
+
+        return `
+        <div class="testi-card">
+            <div class="testi-header">
+                <img src="${t.photo}" alt="${t.name}" class="testi-avatar" loading="lazy">
+                <div class="testi-info">
+                    <div class="testi-name">${t.name}</div>
+                    <div class="testi-role">${t.role}</div>
+                    <div class="testi-stars">${starsHtml}</div>
+                </div>
+            </div>
+            <p class="testi-text">"${t.text}"</p>
+            <div class="testi-workshop">
+                <i class="fa-solid fa-bookmark"></i>
+                ${t.workshopTitle}
+            </div>
+        </div>`;
+    }).join('');
+}
+
+// ============================================================
+// NAV LINKS (Momen & Member)
+// ============================================================
+function setupNavLinks() {
+    const catId = state.category.id;
+    const momenBtn = document.getElementById('btn-momen');
+    const memberBtn = document.getElementById('btn-member');
+
+    if (momenBtn)  momenBtn.href = `workshop-momen.html?cat=${catId}`;
+    if (memberBtn) memberBtn.href = `workshop-member.html?cat=${catId}`;
+}
 
 // ============================================================
 // NAVBAR SCROLL

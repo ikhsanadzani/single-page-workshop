@@ -1012,3 +1012,293 @@ const TRAINERS = [
         experience: '8 tahun pengalaman mendesain produk digital multi-platform dan membangun design system di startup Unicorn.'
     }
 ];
+
+// ============================================================
+// 7. TESTIMONIALS
+// ============================================================
+const TESTIMONIALS = [
+    {
+        id: 'tst-1', category: 'engineering',
+        name: 'Ahmad Fauzan', role: 'DevOps Engineer @ Tokopedia',
+        photo: 'https://i.pravatar.cc/150?u=ahmad-fauzan',
+        rating: 5, batch: 1,
+        text: 'Workshop Archlinux dari Yuros benar-benar membuka wawasan saya tentang bagaimana Linux bekerja di level fundamental. Instrukturnya sangat kompeten dan hands-on!',
+        workshopTitle: 'Mastering Archlinux: Bangun Distro Sendiri'
+    },
+    {
+        id: 'tst-2', category: 'engineering',
+        name: 'Putri Maharani', role: 'SRE @ Gojek',
+        photo: 'https://i.pravatar.cc/150?u=putri-maharani',
+        rating: 5, batch: 2,
+        text: 'Materinya sangat terstruktur dan relevan dengan kebutuhan industri. Setelah workshop CI/CD ini, tim saya berhasil memangkas deployment time hingga 70%.',
+        workshopTitle: 'CI/CD Pipeline dengan GitHub Actions & Jenkins'
+    },
+    {
+        id: 'tst-3', category: 'teknologi',
+        name: 'Rendi Kurniawan', role: 'ML Engineer @ Bukalapak',
+        photo: 'https://i.pravatar.cc/150?u=rendi-kurniawan',
+        rating: 5, batch: 1,
+        text: 'Dari nol hingga bisa deploy model ML ke production. Workshop ini memberikan fondasi yang sangat kuat untuk karir saya di bidang AI.',
+        workshopTitle: 'Machine Learning Pipeline dari Nol'
+    },
+    {
+        id: 'tst-4', category: 'security',
+        name: 'Lina Safitri', role: 'Penetration Tester @ Deloitte',
+        photo: 'https://i.pravatar.cc/150?u=lina-safitri',
+        rating: 5, batch: 1,
+        text: 'Workshop pentest ini luar biasa! Saya belajar teknik-teknik yang tidak ada di course online manapun. Langsung praktek di lab environment yang realistis.',
+        workshopTitle: 'Penetration Testing & Ethical Hacking'
+    },
+    {
+        id: 'tst-5', category: 'programming',
+        name: 'Dimas Arya', role: 'Backend Developer @ Traveloka',
+        photo: 'https://i.pravatar.cc/150?u=dimas-arya',
+        rating: 4, batch: 2,
+        text: 'Belajar Rust di Yuros adalah keputusan terbaik tahun ini. Konsep ownership dan borrowing yang tadinya membingungkan jadi sangat jelas.',
+        workshopTitle: 'Rust Systems Programming'
+    },
+    {
+        id: 'tst-6', category: 'academic',
+        name: 'Dr. Nurul Hidayah', role: 'Dosen @ ITB',
+        photo: 'https://i.pravatar.cc/150?u=nurul-hidayah',
+        rating: 5, batch: 1,
+        text: 'Workshop LaTeX dan metodologi riset ini sangat membantu mahasiswa saya dalam menulis paper berkualitas internasional. Highly recommended!',
+        workshopTitle: 'LaTeX & Academic Writing'
+    },
+    {
+        id: 'tst-7', category: 'design',
+        name: 'Fajar Setiawan', role: 'UI/UX Lead @ Shopee',
+        photo: 'https://i.pravatar.cc/150?u=fajar-setiawan',
+        rating: 5, batch: 3,
+        text: 'Design system workshop ini membuat saya memahami cara membangun komponen yang scalable. Sekarang tim saya punya design system yang solid.',
+        workshopTitle: 'Design Systems & UI Components'
+    },
+    {
+        id: 'tst-8', category: 'engineering',
+        name: 'Hendra Wijaya', role: 'Cloud Engineer @ AWS',
+        photo: 'https://i.pravatar.cc/150?u=hendra-wijaya',
+        rating: 5, batch: 3,
+        text: 'Docker & Kubernetes workshop ini memberikan pemahaman mendalam tentang container orchestration. Langsung bisa diaplikasikan di kantor.',
+        workshopTitle: 'Docker & Container Orchestration Dasar'
+    }
+];
+
+// ============================================================
+// 8. ALUMNI BATCHES
+// ============================================================
+const ALUMNI_BATCHES = {
+    engineering: {
+        batch1: [
+            { id: 'al-e1-1', name: 'Ahmad Fauzan', photo: 'https://i.pravatar.cc/150?u=al-ahmad', workshopTitle: 'Mastering Archlinux', completedDate: '15 Jan 2025' },
+            { id: 'al-e1-2', name: 'Rina Permatasari', photo: 'https://i.pravatar.cc/150?u=al-rina', workshopTitle: 'CI/CD Pipeline', completedDate: '20 Jan 2025' },
+            { id: 'al-e1-3', name: 'Teguh Prakoso', photo: 'https://i.pravatar.cc/150?u=al-teguh', workshopTitle: 'Docker & Kubernetes', completedDate: '22 Jan 2025' },
+            { id: 'al-e1-4', name: 'Maya Anggraini', photo: 'https://i.pravatar.cc/150?u=al-maya', workshopTitle: 'Networking Dasar', completedDate: '25 Jan 2025' },
+            { id: 'al-e1-5', name: 'Galih Ramadhan', photo: 'https://i.pravatar.cc/150?u=al-galih', workshopTitle: 'Mastering Archlinux', completedDate: '28 Jan 2025' },
+            { id: 'al-e1-6', name: 'Sari Dewi Lestari', photo: 'https://i.pravatar.cc/150?u=al-sari', workshopTitle: 'Shell Scripting', completedDate: '30 Jan 2025' }
+        ],
+        batch2: [
+            { id: 'al-e2-1', name: 'Hendra Wijaya', photo: 'https://i.pravatar.cc/150?u=al-hendra', workshopTitle: 'Docker & Kubernetes', completedDate: '10 Apr 2025' },
+            { id: 'al-e2-2', name: 'Putri Maharani', photo: 'https://i.pravatar.cc/150?u=al-putri', workshopTitle: 'CI/CD Pipeline', completedDate: '15 Apr 2025' },
+            { id: 'al-e2-3', name: 'Bayu Nugroho', photo: 'https://i.pravatar.cc/150?u=al-bayu', workshopTitle: 'Mastering Archlinux', completedDate: '18 Apr 2025' },
+            { id: 'al-e2-4', name: 'Intan Cahyani', photo: 'https://i.pravatar.cc/150?u=al-intan', workshopTitle: 'Ansible Automation', completedDate: '20 Apr 2025' },
+            { id: 'al-e2-5', name: 'Ridho Firmansyah', photo: 'https://i.pravatar.cc/150?u=al-ridho', workshopTitle: 'Shell Scripting', completedDate: '22 Apr 2025' }
+        ],
+        batch3: [
+            { id: 'al-e3-1', name: 'Dian Purnama', photo: 'https://i.pravatar.cc/150?u=al-dian', workshopTitle: 'Mastering Archlinux', completedDate: '05 Aug 2025' },
+            { id: 'al-e3-2', name: 'Faisal Rahman', photo: 'https://i.pravatar.cc/150?u=al-faisal', workshopTitle: 'CI/CD Pipeline', completedDate: '08 Aug 2025' },
+            { id: 'al-e3-3', name: 'Nurul Aini', photo: 'https://i.pravatar.cc/150?u=al-nurul', workshopTitle: 'Docker & Kubernetes', completedDate: '12 Aug 2025' },
+            { id: 'al-e3-4', name: 'Yoga Pratama', photo: 'https://i.pravatar.cc/150?u=al-yoga', workshopTitle: 'Networking Dasar', completedDate: '15 Aug 2025' }
+        ]
+    },
+    teknologi: {
+        batch1: [
+            { id: 'al-t1-1', name: 'Rendi Kurniawan', photo: 'https://i.pravatar.cc/150?u=al-rendi', workshopTitle: 'Machine Learning Pipeline', completedDate: '10 Feb 2025' },
+            { id: 'al-t1-2', name: 'Anisa Rahmawati', photo: 'https://i.pravatar.cc/150?u=al-anisa', workshopTitle: 'IoT & Embedded', completedDate: '14 Feb 2025' },
+            { id: 'al-t1-3', name: 'Wahyu Hidayat', photo: 'https://i.pravatar.cc/150?u=al-wahyu', workshopTitle: 'Cloud Computing', completedDate: '18 Feb 2025' },
+            { id: 'al-t1-4', name: 'Sinta Permata', photo: 'https://i.pravatar.cc/150?u=al-sinta', workshopTitle: 'Computer Vision', completedDate: '22 Feb 2025' }
+        ],
+        batch2: [
+            { id: 'al-t2-1', name: 'Eko Prasetyo', photo: 'https://i.pravatar.cc/150?u=al-eko', workshopTitle: 'Big Data Processing', completedDate: '05 May 2025' },
+            { id: 'al-t2-2', name: 'Fitri Handayani', photo: 'https://i.pravatar.cc/150?u=al-fitri', workshopTitle: 'Machine Learning Pipeline', completedDate: '10 May 2025' },
+            { id: 'al-t2-3', name: 'Arief Budiman', photo: 'https://i.pravatar.cc/150?u=al-arief', workshopTitle: 'IoT & Embedded', completedDate: '15 May 2025' }
+        ],
+        batch3: [
+            { id: 'al-t3-1', name: 'Lestari Wulandari', photo: 'https://i.pravatar.cc/150?u=al-lestari', workshopTitle: 'Cloud Computing', completedDate: '01 Sep 2025' },
+            { id: 'al-t3-2', name: 'Taufik Hidayat', photo: 'https://i.pravatar.cc/150?u=al-taufik', workshopTitle: 'Computer Vision', completedDate: '05 Sep 2025' },
+            { id: 'al-t3-3', name: 'Dewi Anggraeni', photo: 'https://i.pravatar.cc/150?u=al-dewi-a', workshopTitle: 'Big Data Processing', completedDate: '10 Sep 2025' }
+        ]
+    },
+    security: {
+        batch1: [
+            { id: 'al-s1-1', name: 'Lina Safitri', photo: 'https://i.pravatar.cc/150?u=al-lina', workshopTitle: 'Penetration Testing', completedDate: '12 Feb 2025' },
+            { id: 'al-s1-2', name: 'Andika Putra', photo: 'https://i.pravatar.cc/150?u=al-andika', workshopTitle: 'Malware Analysis', completedDate: '16 Feb 2025' },
+            { id: 'al-s1-3', name: 'Nadia Kusuma', photo: 'https://i.pravatar.cc/150?u=al-nadia', workshopTitle: 'Digital Forensics', completedDate: '20 Feb 2025' }
+        ],
+        batch2: [
+            { id: 'al-s2-1', name: 'Rizal Maulana', photo: 'https://i.pravatar.cc/150?u=al-rizal', workshopTitle: 'Web App Security', completedDate: '08 Jun 2025' },
+            { id: 'al-s2-2', name: 'Vina Oktaviani', photo: 'https://i.pravatar.cc/150?u=al-vina', workshopTitle: 'Penetration Testing', completedDate: '12 Jun 2025' }
+        ],
+        batch3: [
+            { id: 'al-s3-1', name: 'Bagus Wicaksono', photo: 'https://i.pravatar.cc/150?u=al-bagus', workshopTitle: 'Network Security', completedDate: '20 Sep 2025' },
+            { id: 'al-s3-2', name: 'Citra Amelia', photo: 'https://i.pravatar.cc/150?u=al-citra', workshopTitle: 'Malware Analysis', completedDate: '25 Sep 2025' },
+            { id: 'al-s3-3', name: 'Doni Setiawan', photo: 'https://i.pravatar.cc/150?u=al-doni', workshopTitle: 'Digital Forensics', completedDate: '28 Sep 2025' }
+        ]
+    },
+    programming: {
+        batch1: [
+            { id: 'al-p1-1', name: 'Dimas Arya', photo: 'https://i.pravatar.cc/150?u=al-dimas', workshopTitle: 'Rust Systems Programming', completedDate: '18 Jan 2025' },
+            { id: 'al-p1-2', name: 'Ayu Lestari', photo: 'https://i.pravatar.cc/150?u=al-ayu', workshopTitle: 'Python Full Stack', completedDate: '22 Jan 2025' },
+            { id: 'al-p1-3', name: 'Firman Hakim', photo: 'https://i.pravatar.cc/150?u=al-firman', workshopTitle: 'Go Microservices', completedDate: '25 Jan 2025' },
+            { id: 'al-p1-4', name: 'Siska Yulianti', photo: 'https://i.pravatar.cc/150?u=al-siska', workshopTitle: 'C/C++ Embedded', completedDate: '28 Jan 2025' }
+        ],
+        batch2: [
+            { id: 'al-p2-1', name: 'Andi Prasetya', photo: 'https://i.pravatar.cc/150?u=al-andi', workshopTitle: 'Python Full Stack', completedDate: '15 May 2025' },
+            { id: 'al-p2-2', name: 'Ratna Sari', photo: 'https://i.pravatar.cc/150?u=al-ratna', workshopTitle: 'Rust Systems Programming', completedDate: '20 May 2025' },
+            { id: 'al-p2-3', name: 'Gilang Mahardika', photo: 'https://i.pravatar.cc/150?u=al-gilang', workshopTitle: 'Full-Stack Web Dev', completedDate: '25 May 2025' }
+        ],
+        batch3: [
+            { id: 'al-p3-1', name: 'Indra Gunawan', photo: 'https://i.pravatar.cc/150?u=al-indra', workshopTitle: 'Go Microservices', completedDate: '10 Oct 2025' },
+            { id: 'al-p3-2', name: 'Wulan Dari', photo: 'https://i.pravatar.cc/150?u=al-wulan', workshopTitle: 'Python Full Stack', completedDate: '15 Oct 2025' }
+        ]
+    },
+    academic: {
+        batch1: [
+            { id: 'al-a1-1', name: 'Dr. Nurul Hidayah', photo: 'https://i.pravatar.cc/150?u=al-nurul-h', workshopTitle: 'LaTeX & Academic Writing', completedDate: '05 Mar 2025' },
+            { id: 'al-a1-2', name: 'Hafiz Ramadhan', photo: 'https://i.pravatar.cc/150?u=al-hafiz', workshopTitle: 'Research Methodology', completedDate: '10 Mar 2025' },
+            { id: 'al-a1-3', name: 'Kartika Sari', photo: 'https://i.pravatar.cc/150?u=al-kartika', workshopTitle: 'Statistics & Probability', completedDate: '15 Mar 2025' }
+        ],
+        batch2: [
+            { id: 'al-a2-1', name: 'Muhamad Ilham', photo: 'https://i.pravatar.cc/150?u=al-ilham', workshopTitle: 'Algorithm Design', completedDate: '20 Jun 2025' },
+            { id: 'al-a2-2', name: 'Riska Amalia', photo: 'https://i.pravatar.cc/150?u=al-riska', workshopTitle: 'LaTeX & Academic Writing', completedDate: '25 Jun 2025' }
+        ],
+        batch3: [
+            { id: 'al-a3-1', name: 'Surya Darma', photo: 'https://i.pravatar.cc/150?u=al-surya', workshopTitle: 'Discrete Mathematics', completedDate: '01 Nov 2025' },
+            { id: 'al-a3-2', name: 'Tiara Putri', photo: 'https://i.pravatar.cc/150?u=al-tiara', workshopTitle: 'Research Methodology', completedDate: '05 Nov 2025' }
+        ]
+    },
+    design: {
+        batch1: [
+            { id: 'al-d1-1', name: 'Fajar Setiawan', photo: 'https://i.pravatar.cc/150?u=al-fajar', workshopTitle: 'Design Systems', completedDate: '08 Mar 2025' },
+            { id: 'al-d1-2', name: 'Melati Kusuma', photo: 'https://i.pravatar.cc/150?u=al-melati', workshopTitle: 'UI/UX with Figma', completedDate: '12 Mar 2025' },
+            { id: 'al-d1-3', name: 'Rizki Fadillah', photo: 'https://i.pravatar.cc/150?u=al-rizki-f', workshopTitle: 'Motion Design', completedDate: '16 Mar 2025' }
+        ],
+        batch2: [
+            { id: 'al-d2-1', name: 'Cantika Dewi', photo: 'https://i.pravatar.cc/150?u=al-cantika', workshopTitle: 'Typography & Branding', completedDate: '10 Jul 2025' },
+            { id: 'al-d2-2', name: 'Ade Kurniawan', photo: 'https://i.pravatar.cc/150?u=al-ade', workshopTitle: 'UI/UX with Figma', completedDate: '15 Jul 2025' }
+        ],
+        batch3: [
+            { id: 'al-d3-1', name: 'Nabila Zahra', photo: 'https://i.pravatar.cc/150?u=al-nabila', workshopTitle: 'Design Systems', completedDate: '20 Nov 2025' },
+            { id: 'al-d3-2', name: 'Pandu Wicaksono', photo: 'https://i.pravatar.cc/150?u=al-pandu', workshopTitle: 'Inkscape & GIMP', completedDate: '25 Nov 2025' }
+        ]
+    }
+};
+
+// ============================================================
+// 9. MEMBER CERTIFICATES
+// ============================================================
+const MEMBER_CERTIFICATES = {
+    engineering: {
+        batch1: [
+            { id: 'cert-e1-1', name: 'Ahmad Fauzan', email: 'ahmad.f@mail.com', workshopTitle: 'Mastering Archlinux', certCode: 'YRS-ENG-B1-001', certDate: '15 Jan 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B1-001' },
+            { id: 'cert-e1-2', name: 'Rina Permatasari', email: 'rina.p@mail.com', workshopTitle: 'CI/CD Pipeline', certCode: 'YRS-ENG-B1-002', certDate: '20 Jan 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B1-002' },
+            { id: 'cert-e1-3', name: 'Teguh Prakoso', email: 'teguh.p@mail.com', workshopTitle: 'Docker & Kubernetes', certCode: 'YRS-ENG-B1-003', certDate: '22 Jan 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B1-003' },
+            { id: 'cert-e1-4', name: 'Maya Anggraini', email: 'maya.a@mail.com', workshopTitle: 'Networking Dasar', certCode: 'YRS-ENG-B1-004', certDate: '25 Jan 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B1-004' },
+            { id: 'cert-e1-5', name: 'Galih Ramadhan', email: 'galih.r@mail.com', workshopTitle: 'Mastering Archlinux', certCode: 'YRS-ENG-B1-005', certDate: '28 Jan 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B1-005' },
+            { id: 'cert-e1-6', name: 'Sari Dewi Lestari', email: 'sari.d@mail.com', workshopTitle: 'Shell Scripting', certCode: 'YRS-ENG-B1-006', certDate: '30 Jan 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B1-006' }
+        ],
+        batch2: [
+            { id: 'cert-e2-1', name: 'Hendra Wijaya', email: 'hendra.w@mail.com', workshopTitle: 'Docker & Kubernetes', certCode: 'YRS-ENG-B2-001', certDate: '10 Apr 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B2-001' },
+            { id: 'cert-e2-2', name: 'Putri Maharani', email: 'putri.m@mail.com', workshopTitle: 'CI/CD Pipeline', certCode: 'YRS-ENG-B2-002', certDate: '15 Apr 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B2-002' },
+            { id: 'cert-e2-3', name: 'Bayu Nugroho', email: 'bayu.n@mail.com', workshopTitle: 'Mastering Archlinux', certCode: 'YRS-ENG-B2-003', certDate: '18 Apr 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B2-003' },
+            { id: 'cert-e2-4', name: 'Intan Cahyani', email: 'intan.c@mail.com', workshopTitle: 'Ansible Automation', certCode: 'YRS-ENG-B2-004', certDate: '20 Apr 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B2-004' },
+            { id: 'cert-e2-5', name: 'Ridho Firmansyah', email: 'ridho.f@mail.com', workshopTitle: 'Shell Scripting', certCode: 'YRS-ENG-B2-005', certDate: '22 Apr 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B2-005' }
+        ],
+        batch3: [
+            { id: 'cert-e3-1', name: 'Dian Purnama', email: 'dian.p@mail.com', workshopTitle: 'Mastering Archlinux', certCode: 'YRS-ENG-B3-001', certDate: '05 Aug 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B3-001' },
+            { id: 'cert-e3-2', name: 'Faisal Rahman', email: 'faisal.r@mail.com', workshopTitle: 'CI/CD Pipeline', certCode: 'YRS-ENG-B3-002', certDate: '08 Aug 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B3-002' },
+            { id: 'cert-e3-3', name: 'Nurul Aini', email: 'nurul.a@mail.com', workshopTitle: 'Docker & Kubernetes', certCode: 'YRS-ENG-B3-003', certDate: '12 Aug 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B3-003' },
+            { id: 'cert-e3-4', name: 'Yoga Pratama', email: 'yoga.p@mail.com', workshopTitle: 'Networking Dasar', certCode: 'YRS-ENG-B3-004', certDate: '15 Aug 2025', certImage: 'https://placehold.co/600x400/1a1a28/6366f1?text=Certificate+YRS-ENG-B3-004' }
+        ]
+    },
+    teknologi: {
+        batch1: [
+            { id: 'cert-t1-1', name: 'Rendi Kurniawan', email: 'rendi.k@mail.com', workshopTitle: 'Machine Learning Pipeline', certCode: 'YRS-TEK-B1-001', certDate: '10 Feb 2025', certImage: 'https://placehold.co/600x400/1a1a28/10b981?text=Certificate+YRS-TEK-B1-001' },
+            { id: 'cert-t1-2', name: 'Anisa Rahmawati', email: 'anisa.r@mail.com', workshopTitle: 'IoT & Embedded', certCode: 'YRS-TEK-B1-002', certDate: '14 Feb 2025', certImage: 'https://placehold.co/600x400/1a1a28/10b981?text=Certificate+YRS-TEK-B1-002' },
+            { id: 'cert-t1-3', name: 'Wahyu Hidayat', email: 'wahyu.h@mail.com', workshopTitle: 'Cloud Computing', certCode: 'YRS-TEK-B1-003', certDate: '18 Feb 2025', certImage: 'https://placehold.co/600x400/1a1a28/10b981?text=Certificate+YRS-TEK-B1-003' },
+            { id: 'cert-t1-4', name: 'Sinta Permata', email: 'sinta.p@mail.com', workshopTitle: 'Computer Vision', certCode: 'YRS-TEK-B1-004', certDate: '22 Feb 2025', certImage: 'https://placehold.co/600x400/1a1a28/10b981?text=Certificate+YRS-TEK-B1-004' }
+        ],
+        batch2: [
+            { id: 'cert-t2-1', name: 'Eko Prasetyo', email: 'eko.p@mail.com', workshopTitle: 'Big Data Processing', certCode: 'YRS-TEK-B2-001', certDate: '05 May 2025', certImage: 'https://placehold.co/600x400/1a1a28/10b981?text=Certificate+YRS-TEK-B2-001' },
+            { id: 'cert-t2-2', name: 'Fitri Handayani', email: 'fitri.h@mail.com', workshopTitle: 'Machine Learning Pipeline', certCode: 'YRS-TEK-B2-002', certDate: '10 May 2025', certImage: 'https://placehold.co/600x400/1a1a28/10b981?text=Certificate+YRS-TEK-B2-002' },
+            { id: 'cert-t2-3', name: 'Arief Budiman', email: 'arief.b@mail.com', workshopTitle: 'IoT & Embedded', certCode: 'YRS-TEK-B2-003', certDate: '15 May 2025', certImage: 'https://placehold.co/600x400/1a1a28/10b981?text=Certificate+YRS-TEK-B2-003' }
+        ],
+        batch3: [
+            { id: 'cert-t3-1', name: 'Lestari Wulandari', email: 'lestari.w@mail.com', workshopTitle: 'Cloud Computing', certCode: 'YRS-TEK-B3-001', certDate: '01 Sep 2025', certImage: 'https://placehold.co/600x400/1a1a28/10b981?text=Certificate+YRS-TEK-B3-001' },
+            { id: 'cert-t3-2', name: 'Taufik Hidayat', email: 'taufik.h@mail.com', workshopTitle: 'Computer Vision', certCode: 'YRS-TEK-B3-002', certDate: '05 Sep 2025', certImage: 'https://placehold.co/600x400/1a1a28/10b981?text=Certificate+YRS-TEK-B3-002' },
+            { id: 'cert-t3-3', name: 'Dewi Anggraeni', email: 'dewi.a@mail.com', workshopTitle: 'Big Data Processing', certCode: 'YRS-TEK-B3-003', certDate: '10 Sep 2025', certImage: 'https://placehold.co/600x400/1a1a28/10b981?text=Certificate+YRS-TEK-B3-003' }
+        ]
+    },
+    security: {
+        batch1: [
+            { id: 'cert-s1-1', name: 'Lina Safitri', email: 'lina.s@mail.com', workshopTitle: 'Penetration Testing', certCode: 'YRS-SEC-B1-001', certDate: '12 Feb 2025', certImage: 'https://placehold.co/600x400/1a1a28/ef4444?text=Certificate+YRS-SEC-B1-001' },
+            { id: 'cert-s1-2', name: 'Andika Putra', email: 'andika.p@mail.com', workshopTitle: 'Malware Analysis', certCode: 'YRS-SEC-B1-002', certDate: '16 Feb 2025', certImage: 'https://placehold.co/600x400/1a1a28/ef4444?text=Certificate+YRS-SEC-B1-002' },
+            { id: 'cert-s1-3', name: 'Nadia Kusuma', email: 'nadia.k@mail.com', workshopTitle: 'Digital Forensics', certCode: 'YRS-SEC-B1-003', certDate: '20 Feb 2025', certImage: 'https://placehold.co/600x400/1a1a28/ef4444?text=Certificate+YRS-SEC-B1-003' }
+        ],
+        batch2: [
+            { id: 'cert-s2-1', name: 'Rizal Maulana', email: 'rizal.m@mail.com', workshopTitle: 'Web App Security', certCode: 'YRS-SEC-B2-001', certDate: '08 Jun 2025', certImage: 'https://placehold.co/600x400/1a1a28/ef4444?text=Certificate+YRS-SEC-B2-001' },
+            { id: 'cert-s2-2', name: 'Vina Oktaviani', email: 'vina.o@mail.com', workshopTitle: 'Penetration Testing', certCode: 'YRS-SEC-B2-002', certDate: '12 Jun 2025', certImage: 'https://placehold.co/600x400/1a1a28/ef4444?text=Certificate+YRS-SEC-B2-002' }
+        ],
+        batch3: [
+            { id: 'cert-s3-1', name: 'Bagus Wicaksono', email: 'bagus.w@mail.com', workshopTitle: 'Network Security', certCode: 'YRS-SEC-B3-001', certDate: '20 Sep 2025', certImage: 'https://placehold.co/600x400/1a1a28/ef4444?text=Certificate+YRS-SEC-B3-001' },
+            { id: 'cert-s3-2', name: 'Citra Amelia', email: 'citra.a@mail.com', workshopTitle: 'Malware Analysis', certCode: 'YRS-SEC-B3-002', certDate: '25 Sep 2025', certImage: 'https://placehold.co/600x400/1a1a28/ef4444?text=Certificate+YRS-SEC-B3-002' },
+            { id: 'cert-s3-3', name: 'Doni Setiawan', email: 'doni.s@mail.com', workshopTitle: 'Digital Forensics', certCode: 'YRS-SEC-B3-003', certDate: '28 Sep 2025', certImage: 'https://placehold.co/600x400/1a1a28/ef4444?text=Certificate+YRS-SEC-B3-003' }
+        ]
+    },
+    programming: {
+        batch1: [
+            { id: 'cert-p1-1', name: 'Dimas Arya', email: 'dimas.a@mail.com', workshopTitle: 'Rust Systems Programming', certCode: 'YRS-PRG-B1-001', certDate: '18 Jan 2025', certImage: 'https://placehold.co/600x400/1a1a28/0ea5e9?text=Certificate+YRS-PRG-B1-001' },
+            { id: 'cert-p1-2', name: 'Ayu Lestari', email: 'ayu.l@mail.com', workshopTitle: 'Python Full Stack', certCode: 'YRS-PRG-B1-002', certDate: '22 Jan 2025', certImage: 'https://placehold.co/600x400/1a1a28/0ea5e9?text=Certificate+YRS-PRG-B1-002' },
+            { id: 'cert-p1-3', name: 'Firman Hakim', email: 'firman.h@mail.com', workshopTitle: 'Go Microservices', certCode: 'YRS-PRG-B1-003', certDate: '25 Jan 2025', certImage: 'https://placehold.co/600x400/1a1a28/0ea5e9?text=Certificate+YRS-PRG-B1-003' },
+            { id: 'cert-p1-4', name: 'Siska Yulianti', email: 'siska.y@mail.com', workshopTitle: 'C/C++ Embedded', certCode: 'YRS-PRG-B1-004', certDate: '28 Jan 2025', certImage: 'https://placehold.co/600x400/1a1a28/0ea5e9?text=Certificate+YRS-PRG-B1-004' }
+        ],
+        batch2: [
+            { id: 'cert-p2-1', name: 'Andi Prasetya', email: 'andi.p@mail.com', workshopTitle: 'Python Full Stack', certCode: 'YRS-PRG-B2-001', certDate: '15 May 2025', certImage: 'https://placehold.co/600x400/1a1a28/0ea5e9?text=Certificate+YRS-PRG-B2-001' },
+            { id: 'cert-p2-2', name: 'Ratna Sari', email: 'ratna.s@mail.com', workshopTitle: 'Rust Systems Programming', certCode: 'YRS-PRG-B2-002', certDate: '20 May 2025', certImage: 'https://placehold.co/600x400/1a1a28/0ea5e9?text=Certificate+YRS-PRG-B2-002' },
+            { id: 'cert-p2-3', name: 'Gilang Mahardika', email: 'gilang.m@mail.com', workshopTitle: 'Full-Stack Web Dev', certCode: 'YRS-PRG-B2-003', certDate: '25 May 2025', certImage: 'https://placehold.co/600x400/1a1a28/0ea5e9?text=Certificate+YRS-PRG-B2-003' }
+        ],
+        batch3: [
+            { id: 'cert-p3-1', name: 'Indra Gunawan', email: 'indra.g@mail.com', workshopTitle: 'Go Microservices', certCode: 'YRS-PRG-B3-001', certDate: '10 Oct 2025', certImage: 'https://placehold.co/600x400/1a1a28/0ea5e9?text=Certificate+YRS-PRG-B3-001' },
+            { id: 'cert-p3-2', name: 'Wulan Dari', email: 'wulan.d@mail.com', workshopTitle: 'Python Full Stack', certCode: 'YRS-PRG-B3-002', certDate: '15 Oct 2025', certImage: 'https://placehold.co/600x400/1a1a28/0ea5e9?text=Certificate+YRS-PRG-B3-002' }
+        ]
+    },
+    academic: {
+        batch1: [
+            { id: 'cert-a1-1', name: 'Dr. Nurul Hidayah', email: 'nurul.h@mail.com', workshopTitle: 'LaTeX & Academic Writing', certCode: 'YRS-ACA-B1-001', certDate: '05 Mar 2025', certImage: 'https://placehold.co/600x400/1a1a28/a855f7?text=Certificate+YRS-ACA-B1-001' },
+            { id: 'cert-a1-2', name: 'Hafiz Ramadhan', email: 'hafiz.r@mail.com', workshopTitle: 'Research Methodology', certCode: 'YRS-ACA-B1-002', certDate: '10 Mar 2025', certImage: 'https://placehold.co/600x400/1a1a28/a855f7?text=Certificate+YRS-ACA-B1-002' },
+            { id: 'cert-a1-3', name: 'Kartika Sari', email: 'kartika.s@mail.com', workshopTitle: 'Statistics & Probability', certCode: 'YRS-ACA-B1-003', certDate: '15 Mar 2025', certImage: 'https://placehold.co/600x400/1a1a28/a855f7?text=Certificate+YRS-ACA-B1-003' }
+        ],
+        batch2: [
+            { id: 'cert-a2-1', name: 'Muhamad Ilham', email: 'ilham.m@mail.com', workshopTitle: 'Algorithm Design', certCode: 'YRS-ACA-B2-001', certDate: '20 Jun 2025', certImage: 'https://placehold.co/600x400/1a1a28/a855f7?text=Certificate+YRS-ACA-B2-001' },
+            { id: 'cert-a2-2', name: 'Riska Amalia', email: 'riska.a@mail.com', workshopTitle: 'LaTeX & Academic Writing', certCode: 'YRS-ACA-B2-002', certDate: '25 Jun 2025', certImage: 'https://placehold.co/600x400/1a1a28/a855f7?text=Certificate+YRS-ACA-B2-002' }
+        ],
+        batch3: [
+            { id: 'cert-a3-1', name: 'Surya Darma', email: 'surya.d@mail.com', workshopTitle: 'Discrete Mathematics', certCode: 'YRS-ACA-B3-001', certDate: '01 Nov 2025', certImage: 'https://placehold.co/600x400/1a1a28/a855f7?text=Certificate+YRS-ACA-B3-001' },
+            { id: 'cert-a3-2', name: 'Tiara Putri', email: 'tiara.p@mail.com', workshopTitle: 'Research Methodology', certCode: 'YRS-ACA-B3-002', certDate: '05 Nov 2025', certImage: 'https://placehold.co/600x400/1a1a28/a855f7?text=Certificate+YRS-ACA-B3-002' }
+        ]
+    },
+    design: {
+        batch1: [
+            { id: 'cert-d1-1', name: 'Fajar Setiawan', email: 'fajar.s@mail.com', workshopTitle: 'Design Systems', certCode: 'YRS-DSN-B1-001', certDate: '08 Mar 2025', certImage: 'https://placehold.co/600x400/1a1a28/f59e0b?text=Certificate+YRS-DSN-B1-001' },
+            { id: 'cert-d1-2', name: 'Melati Kusuma', email: 'melati.k@mail.com', workshopTitle: 'UI/UX with Figma', certCode: 'YRS-DSN-B1-002', certDate: '12 Mar 2025', certImage: 'https://placehold.co/600x400/1a1a28/f59e0b?text=Certificate+YRS-DSN-B1-002' },
+            { id: 'cert-d1-3', name: 'Rizki Fadillah', email: 'rizki.f@mail.com', workshopTitle: 'Motion Design', certCode: 'YRS-DSN-B1-003', certDate: '16 Mar 2025', certImage: 'https://placehold.co/600x400/1a1a28/f59e0b?text=Certificate+YRS-DSN-B1-003' }
+        ],
+        batch2: [
+            { id: 'cert-d2-1', name: 'Cantika Dewi', email: 'cantika.d@mail.com', workshopTitle: 'Typography & Branding', certCode: 'YRS-DSN-B2-001', certDate: '10 Jul 2025', certImage: 'https://placehold.co/600x400/1a1a28/f59e0b?text=Certificate+YRS-DSN-B2-001' },
+            { id: 'cert-d2-2', name: 'Ade Kurniawan', email: 'ade.k@mail.com', workshopTitle: 'UI/UX with Figma', certCode: 'YRS-DSN-B2-002', certDate: '15 Jul 2025', certImage: 'https://placehold.co/600x400/1a1a28/f59e0b?text=Certificate+YRS-DSN-B2-002' }
+        ],
+        batch3: [
+            { id: 'cert-d3-1', name: 'Nabila Zahra', email: 'nabila.z@mail.com', workshopTitle: 'Design Systems', certCode: 'YRS-DSN-B3-001', certDate: '20 Nov 2025', certImage: 'https://placehold.co/600x400/1a1a28/f59e0b?text=Certificate+YRS-DSN-B3-001' },
+            { id: 'cert-d3-2', name: 'Pandu Wicaksono', email: 'pandu.w@mail.com', workshopTitle: 'Inkscape & GIMP', certCode: 'YRS-DSN-B3-002', certDate: '25 Nov 2025', certImage: 'https://placehold.co/600x400/1a1a28/f59e0b?text=Certificate+YRS-DSN-B3-002' }
+        ]
+    }
+};

@@ -1365,6 +1365,111 @@ body {
 .footer-bottom a { color: var(--accent); text-decoration: none; }
 
 /* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testi-section {
+    padding: 64px 0 48px;
+    overflow: hidden;
+}
+.testi-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.testi-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 8px 0 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.testi-carousel::-webkit-scrollbar { display: none; }
+
+.testi-card {
+    flex: 0 0 340px;
+    scroll-snap-align: start;
+    background: rgba(22, 22, 31, 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all var(--transition);
+    position: relative;
+}
+.testi-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 16px; right: 20px;
+    font-size: 4rem;
+    font-family: Georgia, serif;
+    color: rgba(var(--cat-color-raw, 99,102,241), 0.12);
+    line-height: 1;
+    pointer-events: none;
+}
+.testi-card:hover {
+    border-color: rgba(var(--cat-color-raw, 99,102,241), 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.testi-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.testi-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(var(--cat-color-raw, 99,102,241), 0.3);
+}
+.testi-info {
+    flex: 1;
+}
+.testi-name {
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+}
+.testi-role {
+    font-size: 0.75rem;
+    color: var(--text-sec);
+}
+.testi-stars {
+    display: flex;
+    gap: 3px;
+    font-size: 0.7rem;
+    color: var(--gold);
+    margin-top: 2px;
+}
+.testi-text {
+    font-size: 0.88rem;
+    color: var(--text-sec);
+    line-height: 1.7;
+    flex: 1;
+    font-style: italic;
+}
+.testi-workshop {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--cat-color);
+    font-weight: 600;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+.testi-workshop i {
+    font-size: 0.7rem;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
@@ -1386,7 +1491,7 @@ body {
     .stat-div { display: none; }
     .stat-block { padding: 12px 20px; background: var(--bg-elevated); border-radius: var(--radius-md); }
     .type-tabs { grid-template-columns: 1fr; }
-    .ws-list-filters { flex-wrap: wrap; }
+    .testi-card { flex: 0 0 280px; }
     .nav-menu { display: none; }
     .nav-toggle { display: flex; }
     .nav-menu.open {

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Momen Workshop — Yuros.org</title>
+    <meta name="description" id="page-desc" content="Galeri alumni dan momen workshop Yuros.org">
+    <link rel="stylesheet" href="styles/workshop-momen.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Yuros<span class="logo-dot">.org</span></span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html#news"><i class="fa-solid fa-newspaper"></i> Berita</a></li>
+                    <li><a href="index.html#courses"><i class="fa-solid fa-graduation-cap"></i> Course</a></li>
+                    <li><a href="index.html#gallery"><i class="fa-solid fa-images"></i> Galeri</a></li>
+                    <li><a href="index.html#library"><i class="fa-solid fa-book"></i> Perpustakaan</a></li>
+                    <li><a href="workshop-index.html" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Workshop</a></li>
+                    <li><a href="index.html#research"><i class="fa-solid fa-flask"></i> Riset</a></li>
+                    <li><a href="index.html#apps"><i class="fa-solid fa-grid-2"></i> Aplikasi</a></li>
+                    <li><a href="index.html#os"><i class="fa-solid fa-server"></i> OS</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="page-hero" id="page-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Beranda</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="workshop-index.html">Workshop</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="#" id="bc-category-link">Kategori</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Momen</span>
+            </nav>
+            <div class="hero-tag" id="hero-tag">
+                <i class="fa-solid fa-camera"></i>
+                <span>Momen Workshop</span>
+            </div>
+            <h1 id="hero-title">Momen & Alumni Workshop</h1>
+            <p class="hero-desc" id="hero-desc">Lihat alumni dan momen dari setiap batch workshop yang telah berlangsung.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="page-main">
+        <div class="main-inner">
+            <!-- Batch pills -->
+            <div class="batch-pills" id="batch-pills" role="tablist">
+                <button class="batch-pill active" data-batch="batch1" role="tab" aria-selected="true">
+                    <i class="fa-solid fa-layer-group"></i> Batch 1
+                </button>
+                <button class="batch-pill" data-batch="batch2" role="tab" aria-selected="false">
+                    <i class="fa-solid fa-layer-group"></i> Batch 2
+                </button>
+                <button class="batch-pill" data-batch="batch3" role="tab" aria-selected="false">
+                    <i class="fa-solid fa-layer-group"></i> Batch 3
+                </button>
+            </div>
+
+            <!-- Alumni count -->
+            <div class="alumni-count" id="alumni-count"></div>
+
+            <!-- Alumni grid -->
+            <div class="alumni-grid" id="alumni-grid">
+                <!-- Injected by JS -->
+            </div>
+
+            <!-- Empty state -->
+            <div class="empty-state" id="empty-state" style="display:none;">
+                <i class="fa-solid fa-users-slash"></i>
+                <h3>Belum ada alumni</h3>
+                <p>Data alumni untuk batch ini belum tersedia.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="foot-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fa-brands fa-linux"></i>
+                        <span>Yuros<span class="logo-dot">.org</span></span>
+                    </div>
+                    <p>Platform komunitas open source Indonesia untuk belajar, berbagi, dan berinovasi bersama.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h5>Platform</h5>
+                    <ul>
+                        <li><a href="index.html#news">Berita</a></li>
+                        <li><a href="index.html#courses">Course</a></li>
+                        <li><a href="index.html#library">Perpustakaan</a></li>
+                        <li><a href="index.html#research">Riset</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Workshop</h5>
+                    <ul>
+                        <li><a href="workshop-index.html">Semua Kategori</a></li>
+                        <li><a href="workshop-category.html?cat=engineering">Engineering</a></li>
+                        <li><a href="workshop-category.html?cat=security">Security</a></li>
+                        <li><a href="workshop-category.html?cat=programming">Programming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Kontak</h5>
+                    <ul>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Yuros.org — Open Source Community Indonesia. Licensed under <a href="#">GPL-3.0</a>.</p>
+                <p>Made with <i class="fa-solid fa-heart" style="color:#e74c3c"></i> by Yuros Community</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/workshop-data.js"></script>
+    <script src="scripts/workshop-momen.js"></script>
+</body>
+</html>
